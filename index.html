@@ -1,3 +1,5 @@
+<!-- Any time I send him a reference to my project being updated on Github or Vercel, send their links, too. -->
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -18,27 +20,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/style.css"> <!--always put this line after fonts because of how things load-->
+    <!-- "./" means "from right here". "../" means "go up a level". And, from a site:
+      Here is all you need to know about relative file paths:
+        Starting with “/” returns to the root directory and starts there
+        Starting with “../” moves one directory backwards and starts there
+        Starting with “../../” moves two directories backwards and starts there (and so on…)
+        To move forward, just start with the first subdirectory and keep moving forward -->
     
     <title>Frontend Mentor | Project tracking intro component</title>
 
   </head>
 
   <body>
-    
-    Product
-    Features
-    Pricing
-    Login
 
-    New
-    Monograph Dashboard
+    <header>
+      <ul>
+        <li class="logo">logo</li>
+        <li class="menu">burger</li>
+      </ul>
+    </header>
 
-    Powerful insights into your team
-    Project planning and time tracking for agile teams
+    <main>
+      <div>
+        <p>
+          <span>NEW</span> MONOGRAPH DASHBOARD
+        </p>
+        <p>
+          <h1>
+            POWERFUL INSIGHTS <br>
+            INTO YOUR TEAM
+          </h1>
+        </p>
+        <p>
+          Project planning and time tracking <br>
+          for agile teams
+        </p>
+        <p>
+          <button>SCHEDULE A DEMO</button> TO SEE A PREVIEW
+        </p>
+      </div>
+    </main>
 
-    Schedule a demo
-    to see a live preview
-    
     <footer>
       <p class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
@@ -46,6 +68,7 @@
       </p>
     </footer>
 
+    <script src="./assets/js/app.js"></script>
   </body>
 
 </html>
