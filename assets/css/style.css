@@ -1,20 +1,188 @@
+/************************************************************
+********** For Mobile/Narrow Viewport **********
+************************************************************/
+
+/* Remember I worked with FEM's mobile demo at zoom 15. */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Barlow;
+    text-align: left;
+    /* background:
+        url("../../assets/img/illustration-devices.svg")
+            no-repeat
+            scroll
+            0% 0% / 579.3px 280px; Size is good. Positioning is not yet set. */
+}
+
+/****************************************
+header
+****************************************/
+
+header {
+    text-transform: uppercase;
+    font-family: Barlow Condensed;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 42px 37px 0 37px;
+}
+
+.logo {
+    width: 27px;
+    height: 27px; 
+}
+
+.menu-lines {
+    cursor: pointer;
+    align-self: center;
+    width: 29px;  
+    height: 19.3px;    
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    background-color: lightgray; /* just a tool - delete later */
+    border-radius: 4px;
+    margin: 50px 35px 0 35px;
+    padding: 28px;
+}
+
+.menu-item-2 {
+    padding-top: 28px;
+}
+
+.menu-item-3 {
+    padding-top: 28px;
+    padding-bottom: 18px;
+}
+
+.menu-item-4 {
+    color: hsl(231, 7%, 65%);
+    padding-top: 18px;
+}
+
+hr {
+    height: 1px;
+    border-width: 0;
+    background-color: #dee3eb; /* None of their provided colors matched their demo, so I found this one. */
+}
+
+/****************************************
+main
+****************************************/
+
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: Barlow Condensed;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+h1 span {
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+
+h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: Barlow Condensed;
+    font-weight: 700;
+    font-size: 46px;
+}
+
+main p:nth-of-type(1) { /* QQQ: Didn't use a class name instead because I have no idea what I'd call it. */
+    margin: 0;
+    font-size: 21px;
+    font-weight: 700; /* QQQ: How was this able to work, given I don't have access to Barlow 700? */
+}
+
+main p:nth-of-type(2) { /* QQQ: Didn't use a class name instead because I have no idea what I'd call it. */
+    color: hsl(231, 7%, 65%);
+    margin: 0;
+    text-transform: uppercase;
+    font-family: Barlow Condensed;
+    font-size: 16px;
+    font-weight: 400; /* QQQ: doesn't seem to be 400 or 700 */
+    letter-spacing: 2px;
+}
+
+button {
+    color: hsl(207, 33%, 95%);
+    background-color: hsl(0, 100%, 68%);
+    border-radius: 6px;
+    border-width: 0;
+    outline: none;
+    padding: 13px 26px 13px 26px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: Barlow Condensed;
+    font-weight: 700; /* QQQ: doesn't seem to be 400 or 700 */
+    font-size: 16px;
+    letter-spacing: 1px;
+}
 
 
 
-
-
-
-
-
-
-
+/****************************************
+footer
+****************************************/
 
 .attribution {
-    font-size: 11px;
+    margin: 0;
     text-align: center;
+    font-size: 11px;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(228, 45%, 44%); /*hsl(hue, saturation, lightness)*/
 }
-  
+
+
+/************************************************************
+********** For Desktop/Wide Viewport **********
+************************************************************/
+
+/*@media screen and (min-width: ???px) {}*/ /* starting at width of ???px, the code below (which is only for CHANGES to the above code) will take effect. */
+
+    
+
+
+
+
+
+
+
+
+
+/* KEEP THIS AS A REFERENCE:
+parent {
+    display: flex;    mandatory 
+    flex-direction: ;    row (default) | row-reverse | column | column-reverse 
+    justify-content: ;    flex-start (default) | flex-end | center | space-between | space-around | space-evenly 
+    align-items: ;    flex-start | flex-end | center | (baseline) | stretch (default) 
+    flex-wrap: ;    nowrap (default) | wrap | wrap-reverse 
+    align-content: ;    flex-start | flex-end | center | space-between | space-around | stretch (default) 
+}
+
+child {
+    align-self: ;    flex-start | flex-end | center | (baseline) | stretch (default)
+    flex-grow: ;    0 is default 
+    flex-shrink: ;    1 is default 
+    flex-basis: ;    auto is default 
+    order: ;    0 is default 
+}
+*/
