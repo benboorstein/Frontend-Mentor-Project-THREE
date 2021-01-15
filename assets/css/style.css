@@ -52,7 +52,7 @@ header
 
 header {
     text-transform: uppercase;
-    font-family: Barlow Condensed;
+    font-family: 'Barlow Condensed'; /* Note that even though this font is written in style-guide.md as "[Barlow Condensed]", it does need quotes around it when referenced in the CSS. Sometimes a browser understands without the quotes, but the proper way to reference a two word font name is to include the quotes. */
     font-weight: 700;
     font-size: 20px;
     letter-spacing: 1px;
@@ -69,9 +69,19 @@ header {
     height: 27px; 
 }
 
-.menu-three-lines {
-    cursor: pointer;
+header button {
     align-self: center;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+}
+
+header button:active {
+    outline: none;
+}
+
+.menu-three-lines {
     width: 29px;  
     height: 19.3px;    
 }
@@ -99,22 +109,24 @@ header {
     /*opacity: 0;*/ /*temporarily here just so I can work on positioning other things.*/
 }
 
-.menu-item-1 {
-    cursor: pointer;
+li a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.menu-items li:nth-of-type(1) {
     margin-bottom: 29px;
 }
 
-.menu-item-2 {
-    cursor: pointer;
+.menu-items li:nth-of-type(2) {
     margin-bottom: 29px;
 }
 
-.menu-item-3 {
-    cursor: pointer; 
+.menu-items li:nth-of-type(3) {
 }
 
 /*Making a line without any HTML (e.g., <hr>) for it.*/
-.menu-item-3::after {
+.menu-items li:nth-of-type(3)::after {
     cursor: auto;
     content: '';
     display: block;
@@ -122,8 +134,7 @@ header {
     margin-top: 28px;
 }
 
-.menu-item-4 {
-    cursor: pointer;
+.menu-items li:last-child {
     color: hsl(231, 7%, 65%);
     margin-top: 28px;
 }
@@ -141,7 +152,7 @@ h1 {
     margin: 0;
     margin-bottom: 22px;
     text-transform: uppercase;
-    font-family: Barlow Condensed;
+    font-family: 'Barlow Condensed';
     font-weight: 700;
     font-size: 17px;
 }
@@ -166,7 +177,7 @@ h2 {
     margin: 0;
     margin-bottom: 20px;
     text-transform: uppercase;
-    font-family: Barlow Condensed;
+    font-family: 'Barlow Condensed';
     font-weight: 700;
     font-size: 46px;
     line-height: 1;
@@ -177,7 +188,7 @@ main p:nth-of-type(1) {
     margin: 0;
     margin-bottom: 33px;
     font-size: 21px;
-    font-weight: 400; /* QQQ: I was able to make this "700" - How was this able to work, given I don't have access to Barlow 700? */
+    font-weight: 400; /* Question: I was able to make this "700". How was this able to work, given I don't have access to Barlow 700? Answer: The browser is guessing and being smart in this case. */
 }
 
 main p:nth-of-type(2) {
@@ -185,13 +196,13 @@ main p:nth-of-type(2) {
     margin: 0;
     margin-bottom: 95px;
     text-transform: uppercase;
-    font-family: Barlow Condensed;
+    font-family: 'Barlow Condensed';
     font-size: 16px;
-    font-weight: 400; /* QQQ: On the demo this doesn't seem to be 400 or 700 */
+    font-weight: 400;
     letter-spacing: 2px;
 }
 
-button {
+main button {
     color: hsl(207, 33%, 95%);
     background-color: hsl(0, 100%, 68%);
     border-radius: 6px;
@@ -200,14 +211,14 @@ button {
     padding: 13px 27px 13px 27px;
     cursor: pointer;
     text-transform: uppercase;
-    font-family: Barlow Condensed;
-    font-weight: 700; /* QQQ: On the demo this doesn't seem to be 400 or 700 */
+    font-family: 'Barlow Condensed';
+    font-weight: 700;
     font-size: 16px;
     letter-spacing: 1px;
     margin-right: 17px;
 }
 
-button:active {
+main button:active {
     opacity: 0.7;
 }
 
@@ -261,6 +272,10 @@ footer
         margin-left: 166px;
     }
 
+    header button {
+        display: none;
+    }
+
     .menu-three-lines {
         display: none;   
     }
@@ -277,39 +292,40 @@ footer
         justify-content: space-evenly;
     }
 
-    .menu-item-1 {
-        cursor: pointer;
+    li a:visited {
+        text-decoration: underline; /* QQQ: Why doesn't this work? It works but only for a split second. It might be because of "text-decoration: inherit" on the mobile viewport's "li a". This shouldn't be a problem, I think, but I'm not sure. And either way, I'm not sure what I'd do about it, because I don't think I can get rid of that line. */
+    }
+
+    .menu-items li:nth-of-type(1) {
         margin: 0;
         margin-right: 38px;
     }
 
-    .menu-item-1:active {
+    .menu-items li:nth-of-type(1):active {
         text-decoration: underline;
     }
     
-    .menu-item-2 {
-        cursor: pointer;
+    .menu-items li:nth-of-type(2) {
         margin: 0;
         margin-right: 38px;
     }
 
-    .menu-item-2:active {
+    .menu-items li:nth-of-type(2):active {
         text-decoration: underline;
     }
     
-    .menu-item-3 {
-        cursor: pointer;
+    .menu-items li:nth-of-type(3) {
         margin: 0;
-        display: flex; /* This is here because ".menu-item-3::after" just below acts as a child of ".menu-item-3". */
+        display: flex; /* This is here because ".menu-items li:nth-of-type(3)::after" just below acts as a child of ".menu-items li:nth-of-type(3)". */
         margin-right: 38px;
     }
 
-    .menu-item-3:active {
+    .menu-items li:nth-of-type(3):active {
         text-decoration: underline;
     }
 
     /*Making a bullet point without any HTML for it.*/
-    .menu-item-3::after {
+    .menu-items li:nth-of-type(3)::after {
         border: none;
         margin: 0;
         align-self: center;
@@ -320,12 +336,11 @@ footer
         margin-left: 38px;
     }
 
-    .menu-item-4 {
-        cursor: pointer;
+    .menu-items li:last-child {
         margin: 0;
     }
 
-    .menu-item-4:active {
+    .menu-items li:last-child:active {
         text-decoration: underline;
     }
 
@@ -351,19 +366,13 @@ footer
     h2 {
         margin-bottom: 30px;
         font-size: 54px;
-    }
-
-    h2 span {
-        display: block;
+        max-width: 34%; /* This is a good way of getting this element's text's line break in the right place (so it matches that of the FEM demo). */
     }
 
     main p:nth-of-type(1) {
         margin-bottom: 60px;
         font-size: 15px;
-    }
-
-    main p:nth-of-type(1) span {
-        display: block;
+        max-width: 20%; /* This is a good way of getting this element's text's line break in the right place (so it matches that of the FEM demo). */
     }
 
     main p:nth-of-type(2) {
@@ -371,7 +380,7 @@ footer
         letter-spacing: 4px;
     }
 
-    button {
+    main button {
         padding: 12px 27px 12px 27px;
         font-size: 13px;
     }
