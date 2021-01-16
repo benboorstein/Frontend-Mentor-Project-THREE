@@ -78,12 +78,12 @@ header button {
 }
 
 header button:active {
-    outline: none;
+    outline: none; /* QQQ: Only works for the click, but not for the click release. And I don't want to change the :focus setting of this button because then the tab test won't work on it. I think the problem is that this button is not also a link (i.e., <a>), but this button should/can not be a link. So how to I properly style it to maintain its "TABableness" while also not displaying an outline/border upon release of the click? */
 }
 
 .menu-three-lines {
     width: 29px;  
-    height: 19.3px;    
+    height: 19.3px;
 }
 
 .menu-items {
@@ -105,8 +105,7 @@ header button:active {
             -11px 36px 35px 0px rgba(91, 95, 113, 0.1),
         /* bottom-left: */
             -129px 133px 20px -128px rgba(0, 0, 0, 0.2);
-
-    /*opacity: 0;*/ /*temporarily here just so I can work on positioning other things.*/
+    visibility: hidden;
 }
 
 li a {
@@ -218,7 +217,7 @@ main button {
     margin-right: 17px;
 }
 
-main button:active {
+main button:active, main button:focus {
     opacity: 0.7;
 }
 
@@ -236,7 +235,6 @@ footer
 .attribution a {
     color: hsl(228, 45%, 44%); /*hsl(hue, saturation, lightness)*/
 }
-
 
 /************************************************************
 ********** For Desktop/Wide Viewport **********
@@ -290,10 +288,11 @@ footer
         margin-right: 164px;
         display: flex;
         justify-content: space-evenly;
+        visibility: visible;
     }
 
-    li a:visited {
-        text-decoration: underline; /* QQQ: Why doesn't this work? It works but only for a split second. It might be because of "text-decoration: inherit" on the mobile viewport's "li a". This shouldn't be a problem, I think, but I'm not sure. And either way, I'm not sure what I'd do about it, because I don't think I can get rid of that line. */
+    li a:focus {
+        text-decoration: underline black;
     }
 
     .menu-items li:nth-of-type(1) {
