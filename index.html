@@ -38,9 +38,12 @@
       <header>
         <div class="top-images">
           <img class="logo" src="./assets/img/logo.svg" alt="logo">
-          <button id="menuThreeLines"><img class="menu-three-lines" src="./assets/img/icon-hamburger.svg" alt="minimized menu lines"></button>
+          <button id="menu-button">
+            <img class="icon-hamburger" src="./assets/img/icon-hamburger.svg" alt="minimized menu lines">
+            <img class="icon-close-menu is-hidden" src="./assets/img/icon-close.svg" alt="maximized menu X">
+          </button>
         </div>
-        <ul class="menu-items">
+        <ul class="menu-items is-hidden" id="menu">
           <li><a href="#" target="_blank">Product</a></li>
           <li><a href="#" target="_blank">Features</a></li> 
           <li><a href="#" target="_blank">Pricing</a></li> 
