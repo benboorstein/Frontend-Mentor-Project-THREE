@@ -78,8 +78,14 @@ header button {
     border-width: 0;
 }
 
-header button:active {
+/* This is here to remove the default outline that appears upon clicking the button. But removing this causes a problem: It also removes the line that appears (and should appear, for accessibility reasons) when the button is found with "tab". So there needs to be a visual indication of when the button is tabbed on. To solve this, there's ":focus-visible" (used just below). Reference this for more info on ":focus-visible" if needed: https://css-tricks.com/almanac/selectors/f/focus-visible/. */
+header button:focus {
     outline: none;
+}
+
+header button:focus-visible {
+    border: 2px solid black; /* I made this a "border" instead of an "outline" just so that I could give it a border-radius (there's no way to create a similar effect, I believe, with outline). */
+    border-radius: 5px;
 }
 
 .icon-hamburger {
